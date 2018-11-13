@@ -1,9 +1,12 @@
-package bjpkten.pservicedemo;
+package bjpkten.pservicedemo.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+
+import bjpkten.pservicedemo.service.Mp3Service;
+import bjpkten.pservicedemo.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -85,5 +88,11 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
         Intent intent = new Intent(this,Mp3Service.class);
         stopService(intent);
+    }
+
+
+    public void jumpToIntentService(View view) {
+        Intent intent = new Intent(this,IntentServiceActivity.class);
+        startActivity(intent);
     }
 }

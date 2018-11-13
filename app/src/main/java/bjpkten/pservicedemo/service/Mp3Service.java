@@ -1,10 +1,12 @@
-package bjpkten.pservicedemo;
+package bjpkten.pservicedemo.service;
 
 import android.app.Service;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Binder;
 import android.os.IBinder;
+
+import bjpkten.pservicedemo.R;
 
 /**
  * 音乐播放service

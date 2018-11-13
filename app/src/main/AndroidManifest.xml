@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="bjpkten.pservicedemo">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,9 +22,26 @@
         </activity>
 
         <service
-            android:name=".Mp3Service"
+            android:name=".service.Mp3Service"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
+
+        <activity android:name=".activities.BindServiceActivity" />
+
+        <service
+            android:name=".service.MyIntentService"
+            android:exported="false" />
+
+        <activity android:name=".activities.IntentServiceActivity" />
+
+        <receiver
+            android:name=".DownloadReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"></category>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
